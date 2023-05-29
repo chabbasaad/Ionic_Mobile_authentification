@@ -1,0 +1,98 @@
+
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="notifications"></ion-icon>
+      </ion-button>
+      
+      <ion-button>
+        <ion-icon slot="icon-only" name="person"></ion-icon>
+      </ion-button>
+      <ion-button (click)="logout()">
+  <ion-icon slot="icon-only" name="log-out"></ion-icon>
+</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Tagline -->
+  <div class="ttag">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="ttagline">Build Your<br>Perfect Body</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category Selector -->
+  <div class="tcat py-3">
+    <div class="container">
+      <ion-segment value="gym">
+        <ion-segment-button value="gym">
+          <ion-label>Gym</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="home">
+          <ion-label>Home</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="yoga">
+          <ion-label>Yoga</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+      <div class="tab-content pt-3">
+        <div id="pills-gym" class="tab-pane fade show active">
+          <div class="row">
+            <div class="col-6 col-md-4">
+              <ion-card>
+                <ion-img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=750&amp;q=80"></ion-img>
+                <ion-card-header>
+                  <ion-card-title><a href="#" class="exercise-card-title">Chest</a></ion-card-title>
+                  <ion-card-subtitle><small class="text-muted">15 Exercises</small></ion-card-subtitle>
+                </ion-card-header>
+              </ion-card>
+            </div>
+            <!-- Add other cards with the same structure -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+
+
+<!-- <ion-content>
+  <h1>Welcome to the Dashboard!</h1>
+  <div class="dashboard-container">
+    <div class="dashboard-item" (click)="goToWorkouts()">
+      <h3>Workouts</h3>
+      <p>View and manage your workouts</p>
+    </div>
+  
+    <div class="dashboard-item" (click)="goToMeals()">
+      <h3>Meals</h3>
+      <p>Manage your meal plans and recipes</p>
+    </div>
+  
+    <div class="dashboard-item" (click)="goToProgress()">
+      <h3>Progress</h3>
+      <p>Track your fitness progress</p>
+    </div>
+  
+    <div class="dashboard-item" (click)="goToTrainWithFriends()">
+      <h3>Train with Friends</h3>
+      <p>Connect and workout with friends</p>
+    </div>
+  </div>
+
+</ion-content> -->
