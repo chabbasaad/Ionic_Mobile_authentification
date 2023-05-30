@@ -7,13 +7,28 @@
 </ion-header>
 
 <ion-content>
+  <ion-form [formGroup]="UserLoginForm">
   <ion-item>
     <ion-label position="stacked">Email</ion-label>
-    <ion-input [(ngModel)]="email" required></ion-input>
+    <ion-input formControlName="Email" required></ion-input>
+    <ion-label style="color: red; padding-top: 0.2rem" *ngIf="UserLoginForm.get('Email')?.invalid && UserLoginForm.get('Email')?.touched">
+      Email is required
+    </ion-label>
   </ion-item>
   <ion-item>
     <ion-label position="stacked">Password</ion-label>
-    <ion-input [(ngModel)]="password" type="password" required></ion-input>
+    <ion-input formControlName="Password" type="password" required></ion-input>
+    <ion-label style="color: red; padding-top: 0.2rem" *ngIf="UserLoginForm.get('Password')?.invalid && UserLoginForm.get('Password')?.touched">
+      Password is required
+    </ion-label>
   </ion-item>
   <ion-button expand="full" (click)="login()">Login</ion-button>
+  <ion-button expand="full" routerLink="/register">Register</ion-button>
+  <ion-alert
+  [isOpen]="isAlertOpen"
+  header="Error message"
+  message="Email or Password Wrong"
+  [buttons]="alertButtons"
+></ion-alert>
+</ion-form>
 </ion-content>
